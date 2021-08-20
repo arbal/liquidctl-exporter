@@ -147,7 +147,7 @@ func metricName(n, device string) string {
 	return strings.Join(strings.Split(name, "."), "")
 }
 
-// returns Unix device as an identifier/name of a liquidctl managed device
+// returns address unchanged to work on TrueNAS since /dev/ is not used on FreeBSD
 func deviceName(n string) string {
-	return strings.Split(n, "/dev/")[1]
+	return n
 }
